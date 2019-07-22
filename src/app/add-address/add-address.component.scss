@@ -1,0 +1,65 @@
+.address-form {
+	padding: 40px 15px;
+	box-shadow: 5px 5px 10px #ccc;
+
+	form {
+		display: flex;
+	    flex-flow: row;
+	    justify-content: space-around;
+	}
+
+	.field {
+		label {
+			padding-right: 15px;
+		}
+
+		input {
+			padding: 12px 15px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+			background-color: #DCDCDC;
+		}
+
+		select {
+			border: 1px solid #ccc;
+			background-color: #DCDCDC;
+			height: 40px;
+			width: 150px;
+		}
+
+		&:last-child {
+			width: auto;
+		}
+
+		button {
+			padding: 12px 15px;
+			background: #E0014D;
+			border: none;
+			font-size: 14px;
+			color: #fff;
+			box-shadow: 5px 5px 10px #f1f1f1;
+			border-radius: 10px;
+			cursor: pointer;
+
+			&:hover {
+				background: #ad033c;
+			}
+		}
+
+		.ng-touched.ng-invalid:not(form)  {
+		  border: 1px solid #a94442;
+		}
+
+		.invalid-msg {
+			color: #a94442;
+			text-align: right;
+			padding: 12px 0;
+		}
+	}
+
+	&::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}

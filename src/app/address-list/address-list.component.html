@@ -1,0 +1,3 @@
+<div class="address-block">
+	<app-address class="card" *ngFor="let address of addresses" [address]="address" (edit)="editContact($event)"></app-address>
+</div>

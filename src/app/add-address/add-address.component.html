@@ -1,0 +1,42 @@
+<div class="address-form">
+	<form role="form" #f="ngForm" (ngSubmit)="f.valid && onFormSubmit(f)" novalidate>
+	    <div class="field">
+	      <label>Name</label>
+	      <input name="name" type="text" placeholder="Enter Name" [(ngModel)]="address.name" autofocus #name="ngModel" required>
+	      <div *ngIf="(name.touched || f.submitted) && name.invalid">  
+			   <div class="invalid-msg" *ngIf="name.errors.required">
+		          Name is required.
+		        </div>
+		  </div>
+	    </div>
+	    <div class="field">
+	      <label>Zip Code</label>
+	      <input name="zipCode" type="text" placeholder="Enter Zip Code" [pattern]="pattern" [(ngModel)]="address.zipCode" maxlength="5" required #zipCode="ngModel">
+	      <div *ngIf="(zipCode.touched || f.submitted) && zipCode.invalid">  
+			   <div class="invalid-msg" *ngIf="zipCode.errors.required">
+		          Zip Code is required.
+		        </div>
+		        <div class="invalid-msg" *ngIf="zipCode.errors?.pattern"> 
+				   Zip Code should start with 'ABC'
+				</div> 
+		  </div>
+	    </div>
+	    <div class="field">
+	      <label>Country</label>
+		  <select class="form-control" name="country" [(ngModel)]="address.country" #country="ngModel" required>  
+			<option value="">Select Country</option>  
+			<option *ngFor="let item of countryData" [value]="item">  
+				{{item}}  
+			</option>  
+		   </select>  
+	      <div *ngIf="(country.touched || f.submitted) && country.invalid">  
+			   <div class="invalid-msg" *ngIf="country.errors.required">
+		          Country is required.
+		        </div>
+		  </div>
+	    </div>
+	    <div class="field">
+	      <button class="add-address" type="submit">Add Address</button>
+	    </div>
+    </form>
+</div>

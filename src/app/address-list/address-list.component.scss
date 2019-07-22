@@ -1,0 +1,18 @@
+.address-block {
+	display: flex;
+	flex-direction: row;
+	margin-top: 40px;
+	flex-wrap: wrap;
+}
+.card {
+	width: calc(100%/4 - 20px);
+	padding: 10px 15px 30px;
+	background-color: #e2e2e2;
+	border-radius: 15%;
+	color: #333;
+	margin: 10px;
+	box-shadow: 0 5px 10px #ccc;
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: column;
+}
